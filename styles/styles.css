@@ -1,0 +1,270 @@
+/*SEUDOSELECTORES*/
+:root{
+    --negro: black;
+    --gris: gray;
+    --grisOscuro:#313131;
+    --blanco:white;
+    --fuentePrincipal: 'Lobster', cursive;
+    --fuenteSecundaria: 'Cormorant Garamond', serif;
+}
+/*CONFIGURACIONES INICIALES*/
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size:16px;
+    background-color: var(--negro);
+}
+
+/*header*/
+header{
+    text-align:center;
+    max-width:100%;
+    height: 20rem;
+}
+
+.header{
+    display: flex;
+    justify-content:space-between;
+}
+
+.img-header-izq,
+.img-header-derecha{
+    width:10rem;
+}
+
+.img-header-izq img,
+.img-header-derecha img{
+    width:10rem;
+}
+
+.titulo{
+    background-color:var(--grisOscuro);   
+    height:6rem;
+    border-radius: 30px 0px 30px 0px;
+    -moz-border-radius: 30px 0px 30px 0px;
+    -webkit-border-radius: 30px 0px 30px 0px;
+    border: 5px solid #000000;
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.titulo h1{
+    font-family: var(--fuentePrincipal);
+    font-size: 3rem;
+    color: var(--blanco);
+}
+/*Main*/
+/*Presentacion*/
+main{
+    margin-top: 3rem;    
+    padding-bottom: 3rem;
+}
+
+.main{
+    margin-left:3rem;
+    margin-right:3rem;
+    width:95%;
+    height: 70rem;
+    background-color:var(--grisOscuro);   
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.presentacion{
+    display:flex;
+    justify-content: center;
+    padding-top:3rem;
+    padding-left:3rem;
+}
+.presentacion .estrella{
+    padding-top:3rem;
+    width:20rem;
+    text-align: center;
+}
+.presentacion .estrella img{
+    display:inline;
+}
+
+.presentacion .subtitulo{
+    width:20rem;
+    text-align: center;
+}
+
+.presentacion .subtitulo p{
+    font-family:var(--fuenteSecundaria);
+    color: var(--blanco);
+    font-size: 5rem;
+}
+
+/*Juegos*/
+.juegos{
+}
+
+.juegos .juego{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.juegos .juego .imagen-juego{
+    margin: 0 auto;
+}
+.juegos .juego .imagen-juego .cuadro{
+    background-color: var(--blanco);
+    height: 37rem;
+    width: 30rem;
+    margin:3rem;
+    border-radius: 26px 26px 26px 26px;
+    -moz-border-radius: 26px 26px 26px 26px;
+    -webkit-border-radius: 26px 26px 26px 26px;
+    border: 11px solid #000000;
+    text-align:center
+}
+
+.juegos .juego .imagen-juego .cuadro .img1-cuadro img{
+    height: 30rem;
+}
+
+.juegos .juego .imagen-juego .cuadro .img2-cuadro img{
+    height: 5rem;
+}
+
+.juegos .juego .info-juego{
+    /*margin: 0 auto;*/
+    text-align:center;
+    height: 48rem;
+    padding: 2rem;
+    padding-top: 0.5rem;
+}
+
+.juegos .juego .info-juego .titulo-juego p{
+    font-family: var(--fuenteSecundaria);
+    Color: var(--blanco);
+    font-size:7rem;
+    text-transform: uppercase;
+}
+
+.juegos .juego .info-juego .texto-juego p{
+    font-size:4.5rem;
+    font-family: var(--fuenteSecundaria);
+    Color: var(--blanco);
+}
+
+/*Footer*/
+footer {
+    text-align: center;
+}
+
+footer .texto-footer{
+    border-radius: 61px 61px 0px 0px;
+    -moz-border-radius: 61px 61px 0px 0px;
+    -webkit-border-radius: 61px 61px 0px 0px;
+    border: 0px solid #313131;
+    height:4rem;
+    background-color: var(--grisOscuro);
+    width:100%;
+    font-family: var(--fuenteSecundaria);
+    color: var(--blanco);
+    font-size: 3rem;
+}
+/*Diseño para elJuego.html*/
+
+main .main .opciones{
+    padding: 2rem;
+    text-align: center;
+    display: flex;/*SIrve para centrar muy bien*/
+    justify-content: center;
+}
+
+main .main .opciones .opciones-elegir{
+    display:grid;
+    grid: 1fr 1fr / 1fr;
+    width: 50%;
+    gap: 3rem;
+}
+
+main .main .opciones .opciones-elegir .jugar-E{
+    -webkit-box-shadow: 0px 0px 0px 2px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 0px 2px rgba(0,0,0,1);
+    box-shadow: 0px 0px 0px 2px rgba(0,0,0,1);
+    border-radius: 42px 42px 42px 42px;
+    -moz-border-radius: 42px 42px 42px 42px;
+    -webkit-border-radius: 42px 42px 42px 42px;
+    border: 0px solid var(--grisOscuro);
+    margin: 0 auto;
+    background-color: var(--blanco);
+    margin:1rem;
+}
+
+main .main .opciones .opciones-elegir .jugar-E p{
+    font-family: var(--fuenteSecundaria);
+    font-size: 3rem;
+}
+/*Pagina Dificultad*/
+main .main .opciones .opciones-elegir-D{
+    display:grid;
+    grid: 1fr 1fr 1fr 1fr 1fr/ 1fr;
+    width: 50%;
+    gap: 3rem;
+}
+.main-D{
+    height: 95rem;
+}
+/*Pagina Juego*/
+.casillas{
+    display:flex;
+    justify-content: center;
+}
+
+.casillas-cartas{
+    display:grid;
+    grid: 1fr 1fr / 1fr 1fr 1fr 1fr;
+}
+
+.casillas-cartas .carta{
+    margin: 1rem 2rem;
+    background-color: var(--negro);
+    width:15rem;
+    height: 15rem;
+    text-align:center;
+    padding-top: 5rem;
+    border-radius: 12px 12px 12px 12px;
+    -moz-border-radius: 12px 12px 12px 12px;
+    -webkit-border-radius: 12px 12px 12px 12px;
+    border: 5px solid #ffffff;
+}
+
+.casillas-cartas .carta img{
+    height: 12rem;
+}
+
+.main-J{
+    height: 150rem;
+}
+
+/*ANimaciones CSS*/
+.juegos .juego .imagen-juego .cuadro:hover{
+    -webkit-box-shadow: -1px -1px 56px 0px rgba(255,255,255,1);
+    -moz-box-shadow: -1px -1px 56px 0px rgba(255,255,255,1);
+    box-shadow: -1px -1px 56px 0px rgba(255,255,255,1);
+}
+
+
+.juegos .juego .imagen-juego .cuadro .img1-cuadro img:hover{
+    height: 31rem;
+}
+
+.juegos .juego .imagen-juego .cuadro .img2-cuadro img:hover{
+    height: 6rem;
+}
+main .main .opciones .opciones-elegir .jugar-E:hover{
+    -webkit-box-shadow: 0px 0px 51px -13px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 51px -13px rgba(255,255,255,1);
+    box-shadow: 0px 0px 51px -13px rgba(255,255,255,1);
+}
+/*CSS NECESARIO PARA EL JS*/
+.casillas-cartas .carta-bolteada{
+    background-color: var(--blanco);
+    border: 1px solid var(--negro);
+}

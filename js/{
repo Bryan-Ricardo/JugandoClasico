@@ -1,0 +1,10 @@
+const imagenJ = document.querySelector(".imagen-juego");
+const jugarE = document.querySelector(".jugar-E");
+
+imagenJ.addEventListener("click",()=>{
+    window.location.href = "pages/memorama/elJuego.html";
+});
+
+jugarE.addEventListener("click",()=>{
+    window.location.href = "../../index.html";
+});
