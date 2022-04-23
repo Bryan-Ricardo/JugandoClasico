@@ -267,4 +267,8 @@ main .main .opciones .opciones-elegir .jugar-E:hover{
 .casillas-cartas .carta-bolteada{
     background-color: var(--blanco);
     border: 1px solid var(--negro);
+    padding-bottom: .5rem;
+}
+.casillas-cartas .carta-bolteada .fondo-carta img{
+    width:15rem;
 }
