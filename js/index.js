@@ -40,6 +40,7 @@ let cartasElegidas = 0;
 let cartasElegidasJugando=[];
 let posicionImg;
 let cartasDesabilitadas =[];//Se colocaran las cartas desabilitadas
+posicionesTapar =[];
 
 /*Paginas*/
 if(main.classList.contains("index")){
@@ -78,278 +79,317 @@ function eventosJuego(){
     llenadoCartas();
     carta1.addEventListener("click", ()=>{
         posicionImg=0;
-        if(carta1.classList.contains("carta-bolteada")){
-            carta1.classList.remove("carta-bolteada");
-            carta1.firstElementChild.firstElementChild.src = "../../img/PI.png";
-            quitarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            restablecerValor();
-        }else if(validacionBoltearCarta()){
-            carta1.classList.add("carta-bolteada");
-            carta1.firstElementChild.firstElementChild.src = cartas[orden[0]];
-            agregarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            validacion();
+        if(verificarCartaDesabilitada(orden[posicionImg]) !==true){
+            if(carta1.classList.contains("carta-bolteada")){
+                carta1.classList.remove("carta-bolteada");
+                carta1.firstElementChild.firstElementChild.src = "../../img/PI.png";
+                quitarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                restablecerValor();
+            }else if(validacionBoltearCarta()){
+                carta1.classList.add("carta-bolteada");
+                carta1.firstElementChild.firstElementChild.src = cartas[orden[0]];
+                agregarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                validacion();
+            }
+        }else if(){
+            
         }
     });
 
     carta2.addEventListener("click", ()=>{
         posicionImg=1;
-        if(carta2.classList.contains("carta-bolteada")){
-            carta2.classList.remove("carta-bolteada");
-            carta2.firstElementChild.firstElementChild.src = "../../img/PI.png";
-            quitarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            restablecerValor();
-        }else if(validacionBoltearCarta()){
-            carta2.classList.add("carta-bolteada");
-            agregarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            carta2.firstElementChild.firstElementChild.src = cartas[orden[1]];
-            validacion();
+        
+        if(verificarCartaDesabilitada(orden[posicionImg]) !==true){
+            if(carta2.classList.contains("carta-bolteada")){
+                carta2.classList.remove("carta-bolteada");
+                carta2.firstElementChild.firstElementChild.src = "../../img/PI.png";
+                quitarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                restablecerValor();
+            }else if(validacionBoltearCarta()){
+                carta2.classList.add("carta-bolteada");
+                agregarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                carta2.firstElementChild.firstElementChild.src = cartas[orden[1]];
+                validacion();
+            }
         }
     });
 
     carta3.addEventListener("click", ()=>{
         posicionImg=2;
-        if(carta3.classList.contains("carta-bolteada")){
-            carta3.classList.remove("carta-bolteada");
-            carta3.firstElementChild.firstElementChild.src = "../../img/PI.png";
-            quitarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            restablecerValor();
-        }else if(validacionBoltearCarta()){
-            carta3.classList.add("carta-bolteada");
-            agregarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            carta3.firstElementChild.firstElementChild.src = cartas[orden[2]];
-            validacion();
+        if(verificarCartaDesabilitada(orden[posicionImg]) !==true){
+            if(carta3.classList.contains("carta-bolteada")){
+                carta3.classList.remove("carta-bolteada");
+                carta3.firstElementChild.firstElementChild.src = "../../img/PI.png";
+                quitarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                restablecerValor();
+            }else if(validacionBoltearCarta()){
+                carta3.classList.add("carta-bolteada");
+                agregarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                carta3.firstElementChild.firstElementChild.src = cartas[orden[2]];
+                validacion();
+            }
         }
     });
 
     carta4.addEventListener("click", ()=>{
         posicionImg=3;
-        if(carta4.classList.contains("carta-bolteada")){
-            carta4.classList.remove("carta-bolteada");
-            carta4.firstElementChild.firstElementChild.src = "../../img/PI.png";
-            quitarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            restablecerValor();
-        }else if(validacionBoltearCarta()){
-            carta4.classList.add("carta-bolteada");
-            agregarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            carta4.firstElementChild.firstElementChild.src = cartas[orden[3]];
-            validacion();
+        if(verificarCartaDesabilitada(orden[posicionImg]) !==true){
+            if(carta4.classList.contains("carta-bolteada")){
+                carta4.classList.remove("carta-bolteada");
+                carta4.firstElementChild.firstElementChild.src = "../../img/PI.png";
+                quitarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                restablecerValor();
+            }else if(validacionBoltearCarta()){
+                carta4.classList.add("carta-bolteada");
+                agregarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                carta4.firstElementChild.firstElementChild.src = cartas[orden[3]];
+                validacion();
+            }
         }
     });
 
     carta5.addEventListener("click", ()=>{
         posicionImg=4;
-        if(carta5.classList.contains("carta-bolteada")){
-            carta5.classList.remove("carta-bolteada");
-            carta5.firstElementChild.firstElementChild.src = "../../img/PI.png";
-            quitarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            restablecerValor();
-        }else if(validacionBoltearCarta()){
-            carta5.classList.add("carta-bolteada");
-            agregarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            carta5.firstElementChild.firstElementChild.src = cartas[orden[4]];
-            validacion();
+        if(verificarCartaDesabilitada(orden[posicionImg]) !==true){
+            if(carta5.classList.contains("carta-bolteada")){
+                carta5.classList.remove("carta-bolteada");
+                carta5.firstElementChild.firstElementChild.src = "../../img/PI.png";
+                quitarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                restablecerValor();
+            }else if(validacionBoltearCarta()){
+                carta5.classList.add("carta-bolteada");
+                agregarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                carta5.firstElementChild.firstElementChild.src = cartas[orden[4]];
+                validacion();
+            }
         }
     });
 
     carta6.addEventListener("click", ()=>{
         posicionImg=5;
-        if(carta6.classList.contains("carta-bolteada")){
-            carta6.classList.remove("carta-bolteada");
-            carta6.firstElementChild.firstElementChild.src = "../../img/PI.png";
-            quitarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            restablecerValor();
-        }else if(validacionBoltearCarta()){
-            carta6.classList.add("carta-bolteada");
-            agregarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            carta6.firstElementChild.firstElementChild.src = cartas[orden[5]];
-            validacion();
+        if(verificarCartaDesabilitada(orden[posicionImg]) !==true){
+            if(carta6.classList.contains("carta-bolteada")){
+                carta6.classList.remove("carta-bolteada");
+                carta6.firstElementChild.firstElementChild.src = "../../img/PI.png";
+                quitarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                restablecerValor();
+            }else if(validacionBoltearCarta()){
+                carta6.classList.add("carta-bolteada");
+                agregarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                carta6.firstElementChild.firstElementChild.src = cartas[orden[5]];
+                validacion();
+            }
         }
     });
 
     carta7.addEventListener("click", ()=>{
         posicionImg=6;
-        if(carta7.classList.contains("carta-bolteada")){
-            carta7.classList.remove("carta-bolteada");
-            carta7.firstElementChild.firstElementChild.src = "../../img/PI.png";
-            quitarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            restablecerValor();
-        }else if(validacionBoltearCarta()){
-            carta7.classList.add("carta-bolteada");
-            agregarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            carta7.firstElementChild.firstElementChild.src = cartas[orden[6]];
-            validacion();
+        if(verificarCartaDesabilitada(orden[posicionImg]) !==true){
+            if(carta7.classList.contains("carta-bolteada")){
+                carta7.classList.remove("carta-bolteada");
+                carta7.firstElementChild.firstElementChild.src = "../../img/PI.png";
+                quitarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                restablecerValor();
+            }else if(validacionBoltearCarta()){
+                carta7.classList.add("carta-bolteada");
+                agregarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                carta7.firstElementChild.firstElementChild.src = cartas[orden[6]];
+                validacion();
+            }
         }
     });
 
     carta8.addEventListener("click", ()=>{
         posicionImg=7;
-        if(carta8.classList.contains("carta-bolteada")){
-            carta8.classList.remove("carta-bolteada");
-            carta8.firstElementChild.firstElementChild.src = "../../img/PI.png";
-            quitarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            restablecerValor();
-        }else if(validacionBoltearCarta()){
-            carta8.classList.add("carta-bolteada");
-            agregarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            carta8.firstElementChild.firstElementChild.src = cartas[orden[7]];
-            validacion();
+        if(verificarCartaDesabilitada(orden[posicionImg]) !==true){
+            if(carta8.classList.contains("carta-bolteada")){
+                carta8.classList.remove("carta-bolteada");
+                carta8.firstElementChild.firstElementChild.src = "../../img/PI.png";
+                quitarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                restablecerValor();
+            }else if(validacionBoltearCarta()){
+                carta8.classList.add("carta-bolteada");
+                agregarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                carta8.firstElementChild.firstElementChild.src = cartas[orden[7]];
+                validacion();
+            }
         }
     });
 
     carta9.addEventListener("click", ()=>{
         posicionImg=8;
-        if(carta9.classList.contains("carta-bolteada")){
-            carta9.classList.remove("carta-bolteada");
-            carta9.firstElementChild.firstElementChild.src = "../../img/PI.png";
-            quitarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            restablecerValor();
-        }else if(validacionBoltearCarta()){
-            carta9.classList.add("carta-bolteada");
-            agregarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            carta9.firstElementChild.firstElementChild.src = cartas[orden[8]];
-            validacion();
+        if(verificarCartaDesabilitada(orden[posicionImg]) !==true){
+            if(carta9.classList.contains("carta-bolteada")){
+                carta9.classList.remove("carta-bolteada");
+                carta9.firstElementChild.firstElementChild.src = "../../img/PI.png";
+                quitarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                restablecerValor();
+            }else if(validacionBoltearCarta()){
+                carta9.classList.add("carta-bolteada");
+                agregarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                carta9.firstElementChild.firstElementChild.src = cartas[orden[8]];
+                validacion();
+            }
         }
     });
 
     carta10.addEventListener("click", ()=>{
         posicionImg=9;
-        if(carta10.classList.contains("carta-bolteada")){
-            carta10.classList.remove("carta-bolteada");
-            carta10.firstElementChild.firstElementChild.src = "../../img/PI.png";
-            quitarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            restablecerValor();
-        }else if(validacionBoltearCarta()){
-            carta10.classList.add("carta-bolteada");
-            agregarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            carta10.firstElementChild.firstElementChild.src = cartas[orden[9]];
-            validacion();
+        if(verificarCartaDesabilitada(orden[posicionImg]) !==true){
+            if(carta10.classList.contains("carta-bolteada")){
+                carta10.classList.remove("carta-bolteada");
+                carta10.firstElementChild.firstElementChild.src = "../../img/PI.png";
+                quitarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                restablecerValor();
+            }else if(validacionBoltearCarta()){
+                carta10.classList.add("carta-bolteada");
+                agregarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                carta10.firstElementChild.firstElementChild.src = cartas[orden[9]];
+                validacion();
+            }
         }
     });
 
     carta11.addEventListener("click", ()=>{
         posicionImg=10;
-        if(carta11.classList.contains("carta-bolteada")){
-            carta11.classList.remove("carta-bolteada");
-            carta11.firstElementChild.firstElementChild.src = "../../img/PI.png";
-            quitarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            restablecerValor();
-        }else if(validacionBoltearCarta()){
-            carta11.classList.add("carta-bolteada");
-            agregarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            carta11.firstElementChild.firstElementChild.src = cartas[orden[10]];
-            validacion();
+        if(verificarCartaDesabilitada(orden[posicionImg]) !==true){
+            if(carta11.classList.contains("carta-bolteada")){
+                carta11.classList.remove("carta-bolteada");
+                carta11.firstElementChild.firstElementChild.src = "../../img/PI.png";
+                quitarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                restablecerValor();
+            }else if(validacionBoltearCarta()){
+                carta11.classList.add("carta-bolteada");
+                agregarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                carta11.firstElementChild.firstElementChild.src = cartas[orden[10]];
+                validacion();
+            }
         }
     });
 
     carta12.addEventListener("click", ()=>{
         posicionImg=11;
-        if(carta12.classList.contains("carta-bolteada")){
-            carta12.classList.remove("carta-bolteada");
-            carta12.firstElementChild.firstElementChild.src = "../../img/PI.png";
-            quitarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            restablecerValor();
-        }else if(validacionBoltearCarta()){
-            carta12.classList.add("carta-bolteada");
-            agregarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            carta12.firstElementChild.firstElementChild.src = cartas[orden[11]];
-            validacion();
+        if(verificarCartaDesabilitada(orden[posicionImg]) !==true){
+            if(carta12.classList.contains("carta-bolteada")){
+                carta12.classList.remove("carta-bolteada");
+                carta12.firstElementChild.firstElementChild.src = "../../img/PI.png";
+                quitarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                restablecerValor();
+            }else if(validacionBoltearCarta()){
+                carta12.classList.add("carta-bolteada");
+                agregarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                carta12.firstElementChild.firstElementChild.src = cartas[orden[11]];
+                validacion();
+            }
         }
     });
 
     carta13.addEventListener("click", ()=>{
         posicionImg=12;
-        if(carta13.classList.contains("carta-bolteada")){
-            carta13.classList.remove("carta-bolteada");
-            carta13.firstElementChild.firstElementChild.src = "../../img/PI.png";
-            quitarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            restablecerValor();
-        }else if(validacionBoltearCarta()){
-            carta13.classList.add("carta-bolteada");
-            agregarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            carta13.firstElementChild.firstElementChild.src = cartas[orden[12]];
-            validacion();
+        if(verificarCartaDesabilitada(orden[posicionImg]) !==true){
+            if(carta13.classList.contains("carta-bolteada")){
+                carta13.classList.remove("carta-bolteada");
+                carta13.firstElementChild.firstElementChild.src = "../../img/PI.png";
+                quitarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                restablecerValor();
+            }else if(validacionBoltearCarta()){
+                carta13.classList.add("carta-bolteada");
+                agregarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                carta13.firstElementChild.firstElementChild.src = cartas[orden[12]];
+                validacion();
+            }
         }
     });
 
     carta14.addEventListener("click", ()=>{
         posicionImg=13;
-        if(carta14.classList.contains("carta-bolteada")){
-            carta14.classList.remove("carta-bolteada");
-            carta14.firstElementChild.firstElementChild.src = "../../img/PI.png";
-            quitarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            restablecerValor();
-        }else if(validacionBoltearCarta()){
-            carta14.classList.add("carta-bolteada");
-            agregarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            carta14.firstElementChild.firstElementChild.src = cartas[orden[13]];
-            validacion();
+        if(verificarCartaDesabilitada(orden[posicionImg]) !==true){
+            if(carta14.classList.contains("carta-bolteada")){
+                carta14.classList.remove("carta-bolteada");
+                carta14.firstElementChild.firstElementChild.src = "../../img/PI.png";
+                quitarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                restablecerValor();
+            }else if(validacionBoltearCarta()){
+                carta14.classList.add("carta-bolteada");
+                agregarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                carta14.firstElementChild.firstElementChild.src = cartas[orden[13]];
+                validacion();
+            }
         }
     });
 
     carta15.addEventListener("click", ()=>{
         posicionImg=14;
-        if(carta15.classList.contains("carta-bolteada")){
-            carta15.classList.remove("carta-bolteada");
-            carta15.firstElementChild.firstElementChild.src = "../../img/PI.png";
-            quitarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            restablecerValor();
-        }else if(validacionBoltearCarta()){
-            carta15.classList.add("carta-bolteada");
-            agregarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            carta15.firstElementChild.firstElementChild.src = cartas[orden[14]];
-            validacion();
+        if(verificarCartaDesabilitada(orden[posicionImg]) !==true){
+            if(carta15.classList.contains("carta-bolteada")){
+                carta15.classList.remove("carta-bolteada");
+                carta15.firstElementChild.firstElementChild.src = "../../img/PI.png";
+                quitarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                restablecerValor();
+            }else if(validacionBoltearCarta()){
+                carta15.classList.add("carta-bolteada");
+                agregarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                carta15.firstElementChild.firstElementChild.src = cartas[orden[14]];
+                validacion();
+            }
         }
     });
 
     carta16.addEventListener("click", ()=>{
         posicionImg=15;
-        if(carta16.classList.contains("carta-bolteada")){
-            carta16.classList.remove("carta-bolteada");
-            carta16.firstElementChild.firstElementChild.src = "../../img/PI.png";
-            quitarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            restablecerValor();
-        }else if(validacionBoltearCarta()){
-            carta16.classList.add("carta-bolteada");
-            agregarCarta(orden[posicionImg]);
-            console.log(cartasElegidasJugando);
-            carta16.firstElementChild.firstElementChild.src = cartas[orden[15]];
-            validacion();
+        if(verificarCartaDesabilitada(orden[posicionImg]) !==true){
+            if(carta16.classList.contains("carta-bolteada")){
+                carta16.classList.remove("carta-bolteada");
+                carta16.firstElementChild.firstElementChild.src = "../../img/PI.png";
+                quitarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                restablecerValor();
+            }else if(validacionBoltearCarta()){
+                carta16.classList.add("carta-bolteada");
+                agregarCarta(orden[posicionImg]);
+                console.log(cartasElegidasJugando);
+                carta16.firstElementChild.firstElementChild.src = cartas[orden[15]];
+                validacion();
+            }
         }
     });
 }
 
 /*Funciones de proceso*/
+function taparCartas(){
+    //while(){}
+}
+
 function generarNumeros(){
     return Math.floor((Math.random() * (((15+1)-0)+0)));
 }
@@ -383,11 +423,36 @@ function quitarCarta(carta){
 }
 
 function movimiento(){
-    if((cartasElegidasJugando[0] + 1)===cartasElegidasJugando[1]||(cartasElegidasJugando[1] +1) ===cartasElegidasJugando[0]){
-        console.log("Par");
+    if(((cartasElegidasJugando[0] + 1)===cartasElegidasJugando[1]||(cartasElegidasJugando[1] +1) ===cartasElegidasJugando[0] ) && numeroMayorPar()){
+        guardarPares();
+        cartasElegidasJugando = [];
+        cartasElegidas =0; 
+        console.log(cartasDesabilitadas);
+    }else{
+        taparCartas();
     }
 }
+
+function guardarPares(){
+    cartasDesabilitadas = [...cartasDesabilitadas, ...cartasElegidasJugando];
+    
+}
+
 /*Validaciones*/
+function numeroMayorPar(){//esta validacion sirve para que no cualquier numero consecutive se tome como par
+    let validacionSuperada = false;
+    if(cartasElegidasJugando[0]>cartasElegidasJugando[1]){
+        if(cartasElegidasJugando[0]%2!==0){
+            validacionSuperada = true;
+        }
+    }else if(cartasElegidasJugando[1]>cartasElegidasJugando[0]){
+        if(cartasElegidasJugando[1]%2!==0){
+            validacionSuperada = true;
+        }
+    }
+    return validacionSuperada;
+}
+
 function validacionBoltearCarta(){
     return (cartasElegidas ==0 || cartasElegidas==1);
 }
@@ -403,4 +468,8 @@ function validacion(){
     if(cartasElegidas===2){
         movimiento();
     }
+}
+
+function verificarCartaDesabilitada(valorAsignado){
+    return cartasDesabilitadas.includes(valorAsignado);
 }
